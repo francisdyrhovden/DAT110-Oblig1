@@ -16,7 +16,7 @@ public class Connection {
 	public Connection(Socket socket) {
 
 		try {
-
+			//Test
 			this.socket = socket;
 
 			outStream = new DataOutputStream(socket.getOutputStream());
