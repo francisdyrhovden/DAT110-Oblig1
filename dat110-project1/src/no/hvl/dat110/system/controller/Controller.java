@@ -38,9 +38,12 @@ public class Controller  {
 		
 		// TODO:
 		// loop while reading from sensor and write to display via RPC
-		
-		if (true) {
-			throw new UnsupportedOperationException(TODO.method());
+		for (int i = 0; i<N;i++) {
+
+			  int temp = sensor.read();
+			  display.write(Integer.toString(temp));
+
+			  //noe mer
 			}
 		
 		stopdisplay.stop();
