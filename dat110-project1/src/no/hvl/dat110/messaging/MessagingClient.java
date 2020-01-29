@@ -19,7 +19,6 @@ public class MessagingClient {
 	public Connection connect() {
 		Socket clientSocket;
 		Connection connection = null;
-<<<<<<< HEAD
 
 		// TODO
 		// create TCP socket for client and connection
@@ -28,18 +27,8 @@ public class MessagingClient {
 			clientSocket = new Socket(server, port);
 			connection = new Connection(clientSocket);
 		} catch (IOException ex) {
-			ex.printStackTrace();
-=======
-		
-		try {
-			clientSocket = new Socket(server, port);
-			connection = new Connection(clientSocket);
-			
-		} catch (IOException e) {
-			e.printStackTrace();
->>>>>>> a901265824bb39cc543512373769ef7eb90de4eb
+			ex.printStackTrace();		
 		}
-		
 		return connection;
 	}
 }
