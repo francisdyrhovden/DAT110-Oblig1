@@ -47,14 +47,17 @@ public class RPCServer {
 		   // - send back message containing RPC reply
 			
 		   Message message = connection.receive();
-		   rpcid = (int) message.getData()[0];
+		   byte[] request = message.getData();
+		   rpcid = request[0];
+		   
+		   RPCImpl rpcimpl = services.get(rpcid);
+		   byte[] reply = rpcimpl.invoke(request);
+		   Message replyMessage = new Message(reply);
+		   connection.send(replyMessage);
 		   
 		   if (rpcid == RPCCommon.RPIDSTOP) {
 			   stop = true;
-		   }
-		   RPCImpl method = services.get(rpcid);
-		   byte[] rpcreply = method.invoke(message.getData());
-		   connection.send(new Message(rpcreply));
+			}
 		}
 	
 	}

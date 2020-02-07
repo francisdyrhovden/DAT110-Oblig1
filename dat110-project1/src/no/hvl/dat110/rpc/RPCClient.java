@@ -20,14 +20,14 @@ public class RPCClient {
 	public void connect() {
 		
 		// TODO: connect using the underlying messaging layer connection
-		connection = msgclient.connect();
+		this.connection = msgclient.connect();
 			
 	}
 	
 	public void disconnect() {
 		
 		// TODO: disconnect/close the underlying messaging connection
-		connection.close();
+		this.connection.close();
 		
 	}
 	
@@ -45,7 +45,7 @@ public class RPCClient {
 		
 		*/
 		
-		connect();
+		
 		Message message = new Message(rpcrequest);
 		connection.send(message);
 		Message received = connection.receive();

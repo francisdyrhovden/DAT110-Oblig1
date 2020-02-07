@@ -13,7 +13,7 @@ public class Display extends RPCStub {
 		// implement marshalling, call and unmarshalling for write RPC method
 		byte[] request = RPCUtils.marshallString(RPCID, message);
 		byte[] response = rpcclient.call(request);
-		RPCUtils.unmarshallString(response);
+		RPCUtils.unmarshallVoid(response);
 		
 	}
 }

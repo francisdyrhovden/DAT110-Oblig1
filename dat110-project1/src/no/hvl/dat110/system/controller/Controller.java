@@ -33,8 +33,8 @@ public class Controller {
 		sensor = new Sensor();
 		display = new Display();
 		
-		sensorclient.register(sensor);
-		displayclient.register(display);
+		sensor.register(sensorclient);
+		display.register(displayclient);
 
 		// register stop methods in the RPC layer
 		displayclient.register(stopdisplay);
